@@ -1,0 +1,40 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+
+<div class="col-lg-9">
+    <input id="usersearch" style="margin:18px 0; width:220px; float:right;" class="form-control"type="text" placeholder="Search" aria-label="Search" >
+    <a href="/dashboard/usertable/create" class="btn btn-danger" style="margin-top:20px;">Add a User</a>
+
+  <table style="margin-top:40px;" class="table table-hover table-condensed" >
+     <thead class="thead-dark">
+      <tr>
+
+        <th scope="col">User Id</th>
+        <th scope="col">User Email</th>
+        <th scope="col">User Password</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+      {% for u in users %}
+
+      <tr>
+        <tbody>
+          <td>{{ u.u_id }}</td>
+          <td>{{ u.u_email }}</td>
+          <td>{{ u.u_password }}</td>
+          <td>
+            <a href="/dashboard/usertable/edit/{{u.u_id}}"><button class="btn btn-secondary" type="submit" name="button1">Edit</button></a>
+            <a href="/dashboard/usertable/delete/{{u.u_id}}"><button class="btn btn-danger" type="submit" name="button2">Delete</button</a>
+          </td>
+
+        </tbody>
+      </tr>
+
+      {% endfor %}
+  </table>
+
+  </div>
+
+  {% endblock %}

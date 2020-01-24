@@ -1,0 +1,42 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+<div class="col-lg-9">
+    <input id="search" style="margin:18px 0; width:200px;" class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+
+<table class="table table-hover" style="margin-top:18px;" >
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ticket Id</th>
+      <th scope="col">Tickets</th>
+      <th scope="col">Theatres</th>
+      <th scope="col">Seat type</th>
+      <th scope="col">Hall</th>
+      <th scope="col">Customer Id</th>
+      <th scope="col">Movie Id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for t in tickets %}
+    <tr>
+      <td>{{ t.t_id }}</td>
+      <td>{{ t.t_tickets }}</td>
+      <td>{{ t.t_theatres }}</td>
+      <td>{{ t.t_seat_type }}</td>
+      <td>{{ t.t_hall }}</td>
+      <td>{{ t.cus_id }}</td>
+      <td>{{ t.mov_id }}</td>
+      <td>
+        <a href="/dashboard/tickets/edit/{{t.t_id}}"><button class="btn btn-secondary" type="submit" name="button1">Edit</button></a>
+        <a href="/dashboard/tickets/delete/{{t.t_id}}"><button class="btn btn-danger" type="submit" name="button2">Delete</button</a>
+      </td>
+    </tr>
+
+  </tbody>
+  {% endfor %}
+</table>
+
+   </div>
+{% endblock %}

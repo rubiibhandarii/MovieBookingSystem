@@ -1,0 +1,31 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+
+<div class="col-lg-9">
+
+<form method="POST" action="/dashboard/customer/update/{{customer.c_id}}" >
+
+ {% csrf_token %}
+<div class="form-group">
+  <label> Customer First name </label>
+<input type="text" class="form-control" value="{{customer.c_first_name}}" name="c_first_name"/>
+</div>
+<div class="form-group">
+  <label> Customer Last name </label>
+<input type="text" class="form-control" value="{{customer.c_last_name}}" name="c_last_name"/>
+</div>
+<div class="form-group">
+<label> Customer Email </label>
+<input type="text" class="form-control" value="{{customer.c_email}}" name="c_email"/>
+</div>
+<div class="form-group">
+<label> Password </label>
+<input type="password" class="form-control"value="{{customer.c_password}}" name="c_password"/>
+</div>
+
+<button class="btn btn-success" type="submit">Update</button>
+</form>
+</div>
+
+{% endblock %}

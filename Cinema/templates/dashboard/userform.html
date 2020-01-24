@@ -1,0 +1,33 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+
+<div class="col-lg-9">
+<div style="width:300px;margin-top:50px;" class="container">
+  <section class="container-fluid bg">
+    <section class="row justify-content-center">
+    <section class="col-lg-12 col-sm-6 col-md-3">
+
+      <form action="/dashboard/usertable/create" method="POST" class="form-container" style="font-size:18px;">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail">Admin Email</label>
+          {{form.u_email}}
+          <!-- <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" name="email" placeholder="Enter email"> -->
+          <small id="emailHelp" class="form-text text-muted">Your email is safe with us.</small> </div>
+          <div class="form-group">
+            <label for="exampleInputPassword">Admin Password</label>
+            {{form.u_password}}
+          </div>
+          <button type="sumbit" class="btn btn-danger"> Add user </button>
+
+              </form>
+              </section>
+              </section>
+              </section>
+
+
+
+  </div>
+
+  {% endblock %}

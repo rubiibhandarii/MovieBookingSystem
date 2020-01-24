@@ -1,0 +1,107 @@
+{% load static %}
+<! DOCTYPE html>
+<html>
+<head>
+   <title> Book your cinema</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ </head>
+ <body>
+   <header>
+
+    <div class="main">
+      <div class="logo">
+        <img  src="{% static 'images/design/logo.png' %}">
+      </div>
+      <nav>
+      <ul>
+         <li ><a href="\home">Home</a></li>
+          <li><a href="\movies">Movies</a></li>
+          <li class="active"><a href="\theatres">Theatres</a></li>
+          <li ><a href="\ticket">Tickets</a></li>
+      </ul>
+    </nav>
+
+</div>
+
+
+<div id="conte">
+
+  <div class="box1">
+    <img src="{% static 'images/design/civil.jpg' %}" alt="Civil Mall"/>
+    <div class="b"><a href="\ticket" class="bn">CCinema</a></div>
+    </div>
+
+  <div class="box1">
+    <img src="{% static 'images/design/labim.jpg' %}" alt="Labim Mall"/>
+       <div class="b"><a href="\ticket" class="bn">L Cinema</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/ctc.jpg' %}" alt="CTC Mall"/>
+     <div class="b"><a href="\ticket" class="bn">C Movies</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/city.jpg' %}" alt="City Centre"/>
+       <div class="b"><a href="\ticket" class="bn">Cinema Y</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/e.jpg' %}" alt="Eyeplex"/>
+     <div class="b"><a href="\ticket" class="bn">E Movies</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/kumari.jpg' %}" alt="Kumari Hall"/>
+       <div class="b"><a href="\ticket" class="bn">K Cinema</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/chaya.jpg' %}" alt="Chaya Centre"/>
+     <div class="b"><a href="\ticket" class="bn">Le Shows</a></div>
+  </div>
+  <div class="box1">
+    <img src="{% static 'images/design/mid.jpg' %}" alt="Mid Town"/>
+       <div class="b"><a href="\ticket" class="bn">Galleria</a></div>
+  </div>
+
+
+</div>
+
+<footer>
+
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <p><b>ABOUT US</b></br>
+              Nepal’s No.1 Ticketing Platform and only entertainment guide is here to the rescue.
+              We connect more artists, cinemas and organisers with millions of fans everyday, and
+              leave you with no excuse to stay at home.
+
+             </p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Address:</br> Office #3, Building 352,New Road, P.O. Box 480</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Contact Information:</br> info@bookyourcinema.com
+  +974-44000000</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Copyright © 2020 Book your Cinema | Designed by RB | Powered by RB Pvt. Ltd.</p>
+          </div>
+
+        </div>
+      </div>
+
+      </footer>
+
+
+
+
+
+</header>
+
+<script type="text/javascript" src="{% static 'jquery/bootstrap.min' %}"></script>
+<script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.slim.min' %}"></script>
+<script type="text/javascript" src="{% static 'jquery/popper.min' %}"></script>
+
+
+
+ </body>
+ </html>

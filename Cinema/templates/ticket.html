@@ -1,0 +1,109 @@
+{% load static %}
+<! DOCTYPE html>
+<html>
+<head>
+   <title> Book your cinema</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ </head>
+ <body>
+   <header>
+     <div id="imageSeats">
+    <div class="main">
+      <nav>
+      <ul>
+         <li ><a href="\home">Home</a></li>
+          <li><a href="\movies">Movies</a></li>
+          <li><a href="\theatres">Theatres</a></li>
+          <li class="active"><a href="\ticket">Tickets</a></li>
+      </ul>
+    </nav>
+
+  <!--form-->
+  <div class="form" style="width:300px; margin:auto;color:white;">
+    <form action="/ticket" method="POST">
+      {% csrf_token %}
+
+               <div class="form-group">
+                 <label>Seat Types</label>
+                 <select class="form-control" name="t_seat_type">
+                   <option value="Premium (Rs. 400 per person)">Premium (Rs. 400 per person)</option>
+                   <option value="Silver (Rs. 550 per person)">Silver (Rs. 550 per person)</option>
+                   <option value="Gold (Rs. 700 per person)">Gold (Rs. 700 per person)</option>
+
+
+                 </select>
+               </div>
+
+              <div class="form-group">
+                    <label>Email</label>
+                      <input type="text" value="{{request.session.Session_c_email}}" name="cus_id" class="form-control" placeholder="Email" readonly>
+                </div>
+
+
+               <div class="form-group">
+                 <label>Number of tickets</label>
+                 <input type="number" name="t_tickets" class="form-control" placeholder="No. of Tickets" min="1" max="10" required>
+               </div>
+
+               <div class="form-group">
+                 <label>Theatres</label>
+                 <select class="form-control" name="t_theatres">
+                   <option value="C Cinema">C Cinema</option>
+                   <option value="L Cinema">L Cinema</option>
+                   <option value="M Movies">C Movies</option>
+                   <option value="Cinema Y">Cinema Y</option>
+                   <option value="E Movies">E Movies</option>
+                   <option value="K Cinema">K Cinema</option>
+                   <option value="Le Shows">Le Shows</option>
+                    <option value="Galleria">Galleria</option>
+                 </select>
+               </div>
+               <div class="form-group">
+                 <label>Movies</label>
+                 <select class="form-control" name="mov_id">
+                   {% for movie in movies %}
+                   <option value="{{movie.m_id}}">{{movie.m_movie_name}}</option>
+                   {% endfor %}
+                   <!-- <option value="Dora">Dora</option>
+                   <option value="Ghost">Ghost</option>
+                   <option value="Alladin">Alladin</option>
+                   <option value="LOR">Lord of the Rings</option>
+                   <option value="Us">Us</option>
+                   <option value="Titan">Titanic</option>
+                   <option value="Kabadi">Kabaddi</option>
+                    <option value="Faltu">Faltu</option>
+                    <option value="Namaste">England</option> -->
+                 </select>
+               </div>
+               <div class="form-group">
+  <label > Hall</label>
+  <select class="form-control" name="t_hall">
+    <option value="Hall A (14/2/2020 11:30pm)">Hall A (14/2/2020 11:30pm)</option>
+    <option value="Hall B (14/2/2020 4pm)">Hall B (14/2/2020 4pm)</option>
+    <option value="Hall C (15/2/2020 12:00pm)">Hall C (15/2/2020 12:00pm)</option>
+    <option value="Hall D (15/2/2020 4:30pm)">Hall D (15/2/2020 4:30pm)</option>
+
+  </select>
+</div>
+
+               <button type="submit" class="btn btn-success" >Book</button>
+               </form>
+                </div>
+      </div>
+
+</br>
+
+            </div>
+
+
+    </div>
+    </header>
+
+
+    <script type="text/javascript" src="{% static 'jquery/bootstrap.min' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.slim.min' %}"></script>
+   <script type="text/javascript" src="{% static 'jquery/popper.min' %}"></script>
+ </body>
+  <script src="static/css/javascript.js">
+ </html>

@@ -1,0 +1,78 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+
+<div class="col-lg-9">
+    <input id="search" style="margin:18px 0; width:200px;" class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+  <table class="table table-hover" style="margin-top:18px;" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Customer Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    {% for c in customer %}
+    <tbody>
+      <tr>
+        <td>{{ c.c_id }}</td>
+        <td>{{ c.c_first_name }}</td>
+        <td>{{ c.c_last_name }}</td>
+        <td>{{ c.c_email }}</td>
+        <td>{{ c.c_password }}</td>
+
+        <td>
+          <a href="/dashboard/customer/edit/{{c.c_id}}"> <button class="btn btn-secondary" type="submit" name="button">Edit</button> </a>
+          <a href="/dashboard/customer/delete/{{c.c_id}}"> <button class="btn btn-danger" type="submit" name="button2">Delete</button> </a>
+        </td>
+      </tr>
+
+
+    </tbody>
+    {% endfor %}
+  </table>
+  <form method="post" action="/dasboard/customer">
+  {% csrf_token %}
+    <button type="submit" name="prev" value="prev" id="prev">Previous</button>
+    <button type="submit" name="next" value="next" id="next">Next</button>
+  </form>
+     </div>
+
+
+  <script>
+    $(document).ready(()=>{
+      $("#search").keyup(()=>{
+        $.ajax({
+          data:{search:$("#search").val()},
+          url:'/dashboard/customer/search',
+          method:'GET',
+          success:function(data){
+             console.log(data)
+             $("tr").not("tr.first").remove();
+             var html="";
+             for(d of data){
+                html+="<tr>";
+                  html+="<td>"+d.c_id+"</td>";
+                  html+="<td>"+d.c_first_name+"</td>";
+                  html+="<td>"+d.c_last_name+"</td>";
+                  html+="<td>"+d.c_email+"</td>";
+                  html+="<td>"+d.c_password+"</td>";
+                  html+="<td><a href='/dashboard/customer/edit/"+d.c_id+"'>Edit</a>|<a href='/dashboard/customer/delete/"+d.c_id+"'>Delete</a></td>";
+                html+="</tr>";
+
+                $("table").append(html);
+             }
+          },error:function(data){
+            console.log(error)
+          },complete:function(){
+            console.log("completed");
+          }
+        })
+      })
+    })
+  </script>
+  {% endblock %}

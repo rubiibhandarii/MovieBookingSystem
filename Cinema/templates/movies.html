@@ -1,0 +1,132 @@
+{% load static %}
+<! DOCTYPE html>
+<html>
+<head>
+   <title> Book your cinema</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ </head>
+ <body>
+   <header>
+
+      <nav>
+      <ul>
+         <li ><a href="\home">Home</a></li>
+          <li class="active"><a href="\movies">Movies</a></li>
+          <li><a href="\theatres">Theatres</a></li>
+          <li ><a href="\ticket">Tickets</a></li>
+      </ul>
+    </nav>
+    <!-- SLIDESHOW -->
+    <div class="slidershow middle">
+
+      <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <input type="radio" name="r" id="r5">
+        <div class="slide s1">
+          <img src="{% static 'images/design/m.jpg' %}" alt="Mulan">
+        </div>
+        <div class="slide">
+          <img src="{% static 'images/design/t.jpg' %}" alt="Terminator">
+        </div>
+        <div class="slide">
+          <img src="{% static 'images/design/r.jpg' %}" alt="Rambo">
+        </div>
+        <div class="slide">
+          <img src="{% static 'images/design/h.jpg' %}" alt="Harry Potter">
+        </div>
+        <div class="slide">
+          <img src="{% static 'images/design/a.jpg' %}" alt="Apostle">
+        </div>
+      </div>
+
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+        <label for="r5" class="bar"></label>
+      </div>
+    </div>
+
+
+      </div>
+
+  <div id="conte">
+    <div class="box1">
+      <img src="{% static 'images/design/d.jpg' %}" alt="Dora"/>
+
+       <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+      </div>
+
+    <div class="box1">
+      <img src="{% static 'images/design/g.jpg' %}" alt="Ghost"/>
+       <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/al.jpg' %}" alt="Alladin"/>
+        <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/l.jpg' %}" alt="Lord of the Rings"/>
+         <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/u.jpg' %}" alt="Us"/>
+       <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/ti.jpg' %}" alt="Titanic"/>
+        <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/k.jpg' %}" alt="Kabaddi"/>
+         <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+    <div class="box1">
+      <img src="{% static 'images/design/f.jpg' %}" alt="Faltu"/>
+         <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+    </div>
+        <div class="box1">
+          <img src="{% static 'images/design/n.jpg' %}" alt="Namaste England"/>
+           <div class="b"><a href="/ticket" class="bn">Book Now</a></div>
+        </div>
+
+      </div>
+
+<footer>
+
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <p><b>ABOUT US</b></br>
+              Nepal’s No.1 Ticketing Platform and only entertainment guide is here to the rescue.
+              We connect more artists, cinemas and organisers with millions of fans everyday, and
+              leave you with no excuse to stay at home.
+
+             </p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Address:</br> Office #3, Building 352,New Road, P.O. Box 480</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Contact Information:</br> info@bookyourcinema.com
+  +974-44000000</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p> Copyright © 2020 Book your Cinema | Designed by RB | Powered by RB Pvt. Ltd.</p>
+          </div>
+
+        </div>
+      </div>
+
+      </footer>
+
+    </header>
+    <script type="text/javascript" src="{% static 'jquery/bootstrap.min' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.slim.min' %}"></script>
+   <script type="text/javascript" src="{% static 'jquery/popper.min' %}"></script>
+ </body>
+ </html>

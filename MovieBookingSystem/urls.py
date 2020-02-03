@@ -37,6 +37,7 @@ urlpatterns = [
     path('dashboard/usertable/edit/<int:id>',views_usertable.edit), #table edit
     path('dashboard/usertable/update/<int:id>',views_usertable.update),
     path('dashboard/usertable/delete/<int:id>',views_usertable.delete),
+    path('dashboard/usertable/search',views_usertable.search),
 
     path('dashboard/customer/edit/<int:id>',views_customer.edit),
     path('dashboard/customer/update/<int:id>',views_customer.update),
@@ -46,5 +47,16 @@ urlpatterns = [
     path('dashboard/movie/edit/<int:id>',views_movies.edit),
     path('dashboard/movie/update/<int:id>',views_movies.update),
     path('dashboard/movie/delete/<int:id>',views_movies.delete),
-    path('dashboard/movie/create',views_movies.create)
+    path('dashboard/movie/create',views_movies.create),
+    path('dashboard/movie/search',views_movies.search),
+
+    path('dashboard/tickets/edit/<int:id>',views_tickets.edit),
+    path('dashboard/tickets/update/<int:id>',views_tickets.update),
+    path('dashboard/tickets/delete/<int:id>',views_tickets.delete),
+    path('dashboard/tickets/search',views_tickets.search),
+
+    path('entry',views_login.entry),
+    path('dashboard/logout',views.logout)
+
+
 ]

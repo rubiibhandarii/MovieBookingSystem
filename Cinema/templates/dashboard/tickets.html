@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="col-lg-9">
-    <input id="search" style="margin:18px 0; width:200px;" class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <input id="ticketsearch" style="margin:18px 0; width:200px;" class="form-control" type="text" placeholder="Search" aria-label="Search">
 
-
+<div class="table-responsive">
 <table class="table table-hover" style="margin-top:18px;" >
   <thead class="thead-dark">
     <tr>
@@ -13,8 +13,8 @@
       <th scope="col">Theatres</th>
       <th scope="col">Seat type</th>
       <th scope="col">Hall</th>
-      <th scope="col">Customer Id</th>
-      <th scope="col">Movie Id</th>
+      <th scope="col">Customer Email</th>
+      <th scope="col">Movie</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
       <td>{{ t.t_seat_type }}</td>
       <td>{{ t.t_hall }}</td>
       <td>{{ t.cus_id }}</td>
-      <td>{{ t.mov_id }}</td>
+      <td>{{ t.mov.m_movie_name }}</td>
       <td>
         <a href="/dashboard/tickets/edit/{{t.t_id}}"><button class="btn btn-secondary" type="submit" name="button1">Edit</button></a>
         <a href="/dashboard/tickets/delete/{{t.t_id}}"><button class="btn btn-danger" type="submit" name="button2">Delete</button</a>
@@ -36,7 +36,14 @@
 
   </tbody>
   {% endfor %}
-</table>
 
+</table>
+<form method="POST" action="/dashboard/tickets/">
+{% csrf_token %}
+  <button type="submit" name="prev" value="prev" id="prev" class="btn btn-danger">Previous</button>
+  <input class="form" style="width:140px;height:35px;" type="number" name="page" id="page" value="{{page}}" min="1" readonly>
+  <button type="submit" name="next" value="next" id="next" class="btn btn-danger" >Next</button>
+</form>
+</div>
    </div>
 {% endblock %}

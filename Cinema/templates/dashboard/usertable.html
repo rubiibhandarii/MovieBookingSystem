@@ -5,7 +5,7 @@
 <div class="col-lg-9">
     <input id="usersearch" style="margin:18px 0; width:220px; float:right;" class="form-control"type="text" placeholder="Search" aria-label="Search" >
     <a href="/dashboard/usertable/create" class="btn btn-danger" style="margin-top:20px;">Add a User</a>
-
+<div class="table-responsive">
   <table style="margin-top:40px;" class="table table-hover table-condensed" >
      <thead class="thead-dark">
       <tr>
@@ -34,7 +34,13 @@
 
       {% endfor %}
   </table>
-
+  <form method="POST" action="/dashboard/usertable/">
+  {% csrf_token %}
+    <button type="submit" name="prev" value="prev" id="prev" class="btn btn-danger">Previous</button>
+    <input class="form" style="width:140px;height:35px;" type="number" name="page" id="page" value="{{page}}" min="1" readonly>
+    <button type="submit" name="next" value="next" id="next" class="btn btn-danger" >Next</button>
+  </form>
+</div>
   </div>
 
   {% endblock %}

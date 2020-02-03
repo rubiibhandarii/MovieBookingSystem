@@ -8,13 +8,13 @@
      {% csrf_token %}
      <div class="form-group">
        <label> User Email </label>
-     <input type="text" class="form-control" value="{{users.u_email}}" name="u_email"/>
+     <input type="text" class="form-control" id="useremail"value="{{users.u_email}}" name="u_email"/>
      </div>
      <div class="form-group">
        <label> Password </label>
-     <input type="password" class="form-control" value="{{users.u_password}}" name="u_password"/>
+     <input type="password" class="form-control" id="upassword" value="{{users.u_password}}" name="u_password"/>
      </div>
-    <button class="btn btn-success" type="submit">Update</button>
+    <button class="btn btn-success" id="userseubmit" type="submit">Update</button>
     </form>
 
        </div>

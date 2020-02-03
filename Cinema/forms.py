@@ -53,6 +53,7 @@ class User_Form_Customer(forms.ModelForm):
         fields="__all__"
 
 class User_Form_Ticket(forms.ModelForm):
+
     class Meta:
         model = Ticket
         fields="__all__"

@@ -4,11 +4,6 @@ from Cinema.forms import User_Form_Movie
 from Cinema.authentication import Authentication
 
 @Authentication.valid_admin
-def search(request):
-    movie = Movies.objects.filter(m_movie_name__contains=request.GET['search']).values()
-    return JsonResponse(list(movie),safe=False)
-
-@Authentication.valid_admin
 def movie(request):
     limit=3
     page=1

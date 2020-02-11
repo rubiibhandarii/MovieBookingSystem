@@ -3,16 +3,18 @@
 {% block content %}
 <div class="col-lg-9">
 
-    <form method="POST" action="/dashboard/usertable/update/{{users.u_id}}" style="margin:55px 10px;">
+    <form method="POST" action="/dashboard/usertable/update/{{users.u_id}}" style="margin:55px 10px;" onsubmit="return validateUserEdit()">
 
      {% csrf_token %}
      <div class="form-group">
        <label> User Email </label>
-     <input type="text" class="form-control" id="useremail"value="{{users.u_email}}" name="u_email"/>
+     <input type="text" class="form-control" id="useremailedit"value="{{users.u_email}}" name="u_email"/>
+     <span class="text-danger" id="spanuseremailedit"></span>
      </div>
      <div class="form-group">
        <label> Password </label>
-     <input type="password" class="form-control" id="upassword" value="{{users.u_password}}" name="u_password"/>
+     <input type="password" class="form-control" id="userpasswordedit" value="{{users.u_password}}" name="u_password"/>
+     <span class="text-danger" id="spanuserpasswordedit"></span>
      </div>
     <button class="btn btn-success" id="userseubmit" type="submit">Update</button>
     </form>

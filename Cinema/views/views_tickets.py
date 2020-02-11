@@ -4,11 +4,6 @@ from Cinema.forms import User_Form_Ticket
 from Cinema.authentication import Authentication
 
 @Authentication.valid_admin
-def search(request):
-    tickets = Ticket.objects.filter(cus_id__contains=request.GET['search']).values()
-    return JsonResponse(list(tickets),safe=False)
-
-@Authentication.valid_admin
 def tickets(request):
     limit=3
     page=1

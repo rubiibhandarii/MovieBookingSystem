@@ -8,8 +8,7 @@
  </head>
  <body>
    <header>
-     <div id="imageSeats">
-    <div class="main">
+    <div class="man">
       <nav>
       <ul>
          <li ><a href="\home">Home</a></li>
@@ -59,7 +58,7 @@
                </div>
                <div class="form-group">
                  <label>Movies</label>
-                 <select class="form-control" name="mov">
+                 <select class="form-control" name="mov" required>
                    {% for movie in movies %}
                    <option value="{{movie.m_id}}">{{movie.m_movie_name}}</option>
                    {% endfor %}
@@ -92,8 +91,6 @@
       </div>
 
 </br>
-
-            </div>
 
 
     </div>

@@ -18,6 +18,6 @@ function validateUser(){
       document.getElementById('spanpswrd').innerHTML="*Please enter more than 8 characters";
       return false;
   }
-  alert("New customer is added successfully !")
+  alert("You have signed up successfully!")
 
 }

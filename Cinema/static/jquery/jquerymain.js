@@ -1,14 +1,12 @@
 
-// $("#lg").click(()=>{
-//   alert("you clicked hellow through html");
-// });
-// alert('hello');
-//
-// $(document).ready(()=>{
-//  $("l").hover(()=>{
-//    alert("you clicked hellow through html");
-//    // $(".changecolor").toggle(5000)
-//  })
-// //
-// //  $("h1").css({"background-color": "yellow", "font-size": "200%"});
-//  })
+$(document).ready(()=>{
+$("#title").click(()=>{
+ $("#color").toggle(3000,'swing',()=>{
+ })
+})
+
+$("img").click(()=>{
+ $("#color").toggle(3000,'swing',()=>{
+ })
+})
+ })

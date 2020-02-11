@@ -10,9 +10,10 @@ body{
 
 header{
    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/design/cinema.jpg);
-   height:130vh;
    background-size: cover;
-   background-position: center;
+   background-position: left;
+   height: auto;
+
 }
 
 ul{
@@ -48,14 +49,21 @@ ul li.active a{
   float: left;
   width: 125px;
   height: 120px;
-margin-top: 240px;
-margin-left: 10px;
+margin-top: 290px;
+margin-left: 11px;
 }
 .main{
+  height: Calc(100vh - 500px);
+
   max-width: 1200px;
   margin: auto;
 
 
+}
+.man{
+  max-width: 1200px;
+  margin: auto;
+  height: Calc(100vh + 35px);
 }
 #title
 {
@@ -196,7 +204,8 @@ input[name="r"]{
   margin-left: -80%;
 }
 .container{
-  margin-top: 44%;
+  /* margin-top: 49%; */
+  margin-top: 69%;
 }
 .row{
   margin-top: 60px;
@@ -232,15 +241,9 @@ height: 104px;
 width: 113px;
 }
 
-#imageSeats{
- background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/design/peep.jpg);
- width: 100%
- height: 640px;
- object-fit: cover;
-}
 
 .form-container{
-  height: 550px;
+  height: 500px;
    width: 300px;
    background: black;
   padding: 35px;
@@ -252,7 +255,7 @@ width: 113px;
   margin-left: 30%;
    opacity: 0.8;
   margin-top: -100px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .form-row{
   color: white;
@@ -273,7 +276,15 @@ width: 113px;
 #desc{
   margin-top:200px;
 }
+
 @media (max-width: 1200px){
+  .logo img{
+    float: left;
+    width: 105px;
+    height: 100px;
+  margin-top: 270px;
+  margin-left: 46px;
+  }
   #conte
   {
             width: 95%;
@@ -305,71 +316,158 @@ width: 113px;
   .middle{
    display:none !important;
   }
-
+  #suf{
+    height: 94vh;
+    margin-top: -128px;
   }
+.col-3 p{
+font-size: 16px;
+}
+  }
+
+@media (max-width: 1000px){
+
+.row{
+  margin-top:-10%;
+
+}
+}
+@media (max-width: 1024px){
+  #suf{
+    font-size: 13px;
+    height: 50vh;
+  }
+
+.row p{
+font-size: 16px;
+
+}
 
 @media (max-width: 893px) {
 #title{
-  display:none !important;
-}
-#btn-div{
-  margin-top:0px !important;
+  margin-top: -50px;
 
 }
-#btn-div a{
-  float:left !important;
+#title h1{
+  font-size: 35px;
 }
+#title h3{
+  font-size: 20px;
+}
+#btn-div{
+  margin-top:300px !important;
+
+}
+header{
+height:155vh;
+}
+#dis{
+    display:none !important;
+}
+/* #btn-div a{
+  float:left !important;
+} */
 #nav{
   width:500px;
 }
-#lgf{
-  height: 68vh;
-  margin-top: -110px;
-}
-@media (max-width: 767px){
-  header{
 
-    height: 150vh;
+#lgf{
+   height: 80vh;
+ margin-top: -95px;
+  margin-left: 20px;
+}
+
+#conte{
+    height: 660px;
+    margin-left: 50px;
+            width: 85%;
+            margin-top: 40px;
+}
+}
+
+
+}
+@media screen and (max-width: 900px){
+  .logo img{
+    float: left;
+    width: 85px;
+    height: 70px;
+  margin-top: 275px;
+  margin-left: 34px;
+  }
+.row{
+    margin-top:20px;
+
+  }
+}
+@media screen and (max-width: 768px){
+nav ul li{
+font-size: 14px;
+}
+#nav{
+  margin-right: 50px;
+  margin-left: -50px;
+
 }
 .logo{
   display:none !important;
+
+
 }
-footer{
-  margin-top: 80px;
+.row{
+  width:600px;
 }
 }
+
+
+
+
 
 @media only screen and (max-width: 610px) {
-.logo{
-  display:none !important;
-}
+
 #desc{
   margin-top:100px;
 }
+.row{
+  margin-top: 50px;
 }
+footer{
+  display:none !important;
+}
+#title{
+  margin-top: 55px;
+}
+#suf{
+  margin:-85px 0 0 30px;
+}
+}
+@media only screen and (max-width: 692px) {
+.logo{
+  display:none !important;
+}
+.button{
+  width: 400px;
+}
+.l{
+width: 30px;
 
-/* @media only screen and (max-width: 376px) {
-  header{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/design/cine.jpg);
-
-    width: 380px !important;
-    height: 812px !important;
   }
-  footer{
-    margin-top:500px;
+  .row{
+    width:550px;
   }
-} */
-
-@media screen and (min-width: 900px){
-  header{
-
-    height: 200vh;
 }
-}
-@media screen and (max-width: 778px){
-nav ul li a{
-font-size: 16px;
-margin-left: -29px;
 
+@media screen and (max-width: 530px){
+
+.l{
+font-size: 20px;
+margin: 90px;
+padding: 2px 15px;
+}
+
+
+@media only screen and (max-width: 376px) {
+#suf{
+  height: auto;
 }
 }

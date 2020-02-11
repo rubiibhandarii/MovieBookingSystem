@@ -1,18 +1,3 @@
-"""MovieBookingSystem URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from Cinema.views import views_signup, views_customer, views, views_movies, views_tickets, views_login, views_usertable
@@ -48,12 +33,10 @@ urlpatterns = [
     path('dashboard/movie/update/<int:id>',views_movies.update),
     path('dashboard/movie/delete/<int:id>',views_movies.delete),
     path('dashboard/movie/create',views_movies.create),
-    path('dashboard/movie/search',views_movies.search),
 
     path('dashboard/tickets/edit/<int:id>',views_tickets.edit),
     path('dashboard/tickets/update/<int:id>',views_tickets.update),
     path('dashboard/tickets/delete/<int:id>',views_tickets.delete),
-    path('dashboard/tickets/search',views_tickets.search),
 
     path('entry',views_login.entry),
     path('dashboard/logout',views.logout)

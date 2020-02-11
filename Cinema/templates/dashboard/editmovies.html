@@ -3,12 +3,13 @@
 {% block content %}
 <div class="col-lg-9">
 
-    <form method="POST" action="/dashboard/movie/update/{{movies.m_id}}" style="margin:55px 10px;">
+    <form method="POST" action="/dashboard/movie/update/{{movies.m_id}}" style="margin:55px 10px;" onsubmit="return validateMovieEdit()">
 
      {% csrf_token %}
      <div class="form-group">
        <label> Movie Name </label>
-     <input type="text" class="form-control" value="{{movies.m_movie_name}}" name="m_movie_name"/>
+     <input id="matchnameedit" type="text" class="form-control" value="{{movies.m_movie_name}}" name="m_movie_name"/>
+     <span style="font-size:12px;" id="spanmatchname" class="text-danger"></span>
      </div>
 
     <button class="btn btn-success" type="submit">Update</button>

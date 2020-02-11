@@ -4,11 +4,6 @@ from Cinema.models import User
 from Cinema.authentication import Authentication
 
 @Authentication.valid_admin
-def search(request):
-    user = User.objects.filter(u_email__contains=request.GET['search']).values()
-    return JsonResponse(list(user),safe=False)
-
-@Authentication.valid_admin
 def user_table(request):
     limit=3
     page=1
@@ -25,6 +20,12 @@ def user_table(request):
     return render (request,"dashboard/usertable.html",{'users':users, 'page': page})
 
 
+
+@Authentication.valid_admin
+def search(request):
+    user = User.objects.filter(u_email__contains=request.GET['search']).values()
+    return JsonResponse(list(user),safe=False)
+
 def create(request):
     if request.method=="POST":
       form=User_Form(request.POST)
@@ -34,18 +35,28 @@ def create(request):
       form = User_Form() #class in form
     return render(request,'dashboard/userform.html',{'form':form})
 
+
+
+
 @Authentication.valid_admin_id
 def edit (request,id):
    users=User.objects.get(u_id=id)
    return render(request,'dashboard/edituser.html',{'users':users})
 
+
+
+
 @Authentication.valid_admin_id
 def update(request,id):
      users=User.objects.get(u_id=id)
      form=User_Form(request.POST,instance=users)
-     # return User_Form(request.POST,"update.html",instance=user)#update user ie already initialed
+     # return User_Form(instance=user)#update user ie already initialed
      form.save()
      return redirect('/dashboard/usertable')
+
+
+
+
 
 @Authentication.valid_admin_id
 def delete(request,id):

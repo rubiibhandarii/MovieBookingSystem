@@ -3,7 +3,7 @@
 {% block content %}
 <div class="col-lg-9">
 
-  <form method="POST" action="/dashboard/tickets/update/{{tickets.t_id}}" style="margin:55px 10px;">
+  <form method="POST" action="/dashboard/tickets/update/{{tickets.t_id}}" style="margin:55px 10px;" onsubmit="return validateTicketEdit()">
 
      {% csrf_token %}
      <div class="form group">
@@ -19,7 +19,8 @@
 
      <div class="form-group">
         <label>Email</label>
-        <input type="text" value="{{tickets.cus_id}}" name="cus_id" class="form-control" placeholder="Email">
+        <input type="text" id="ticketemailedit" value="{{tickets.cus_id}}" name="cus_id" class="form-control" placeholder="Email">
+        <span style="font-size:12px;" id="spanticketemailedit" class="text-danger"></span>
        </div>
 
 
